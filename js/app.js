@@ -36,6 +36,7 @@ form.submit(function(event){
 		return
 	}
 	form.find('input[type=text]').val('');
+	userGuess.trim();
 	compareGuess(userGuess, secretNumber);
 	appendUserGuess(userGuess);
 	counter();
@@ -54,7 +55,7 @@ if (userGuess === secretNumber) {
 }
 else if (Math.abs(userGuess - secretNumber) > 50) {
 	$("#feedback").text("Freezing Cold"); 	
-	console.log('Freezing Code');
+	console.log('Freezing Cold');
 }
 else if (Math.abs(userGuess - secretNumber) > 30 && Math.abs(userGuess - secretNumber) < 50) {		
 	$("#feedback").text("Cold");
